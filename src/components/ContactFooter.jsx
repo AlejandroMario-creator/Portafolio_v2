@@ -6,7 +6,7 @@ export default function ContactFooter() {
       <section id="contacto" className="section-rule scroll-mt-24">
         <div className="site-width grid gap-8 py-20 md:grid-cols-[0.72fr_1.28fr] md:py-28">
           <div>
-            <p className="eyebrow">04 / Contacto</p>
+            <p className="eyebrow">04 <span>/</span> Contacto</p>
             <h2 className="section-title mt-3">Conversemos.</h2>
           </div>
           <div className="flex flex-col items-start justify-between gap-8 sm:flex-row sm:items-end">
