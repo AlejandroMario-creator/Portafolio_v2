@@ -1,0 +1,163 @@
+@import "tailwindcss";
+
+@theme {
+  --color-ink: #090d0c;
+  --color-mint: #83e2bd;
+  --font-display: "DM Sans", "Avenir Next", sans-serif;
+  --font-sans: "DM Sans", "Avenir Next", sans-serif;
+}
+
+:root {
+  font-family: "DM Sans", "Avenir Next", sans-serif;
+  color: #e2e8f0;
+  background: #090d0c;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-optical-sizing: auto;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
+}
+
+body {
+  min-width: 320px;
+  margin: 0;
+}
+
+::selection {
+  background: rgb(131 226 189 / 30%);
+}
+
+:focus-visible {
+  outline: 2px solid #83e2bd;
+  outline-offset: 4px;
+}
+
+.site-width {
+  width: min(100% - 3rem, 72rem);
+  margin-inline: auto;
+}
+
+.ambient-background {
+  position: fixed;
+  z-index: 0;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  background-image:
+    linear-gradient(rgb(255 255 255 / 2.2%) 1px, transparent 1px),
+    linear-gradient(90deg, rgb(255 255 255 / 2.2%) 1px, transparent 1px);
+  background-size: 64px 64px;
+  mask-image: linear-gradient(to bottom, black, transparent 85%);
+}
+
+.ambient-background::before,
+.ambient-background::after {
+  position: absolute;
+  content: "";
+  border-radius: 50%;
+  filter: blur(2px);
+  will-change: transform;
+}
+
+.ambient-background::before {
+  top: -34rem;
+  right: -20rem;
+  width: 68rem;
+  height: 68rem;
+  background: radial-gradient(circle, rgb(74 190 145 / 14%), rgb(35 117 99 / 6%) 42%, transparent 70%);
+  animation: ambient-drift 24s ease-in-out infinite alternate;
+}
+
+.ambient-background::after {
+  bottom: -42rem;
+  left: -25rem;
+  width: 72rem;
+  height: 72rem;
+  background: radial-gradient(circle, rgb(48 121 104 / 10%), transparent 68%);
+  animation: ambient-drift 30s ease-in-out infinite alternate-reverse;
+}
+
+.section-rule {
+  border-top: 1px solid rgb(255 255 255 / 7%);
+}
+
+.eyebrow {
+  color: #83e2bd;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+}
+
+.section-title {
+  color: #f8fafc;
+  font-family: "DM Sans", "Avenir Next", sans-serif;
+  font-size: 1.875rem;
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+.button-primary,
+.button-secondary {
+  display: inline-flex;
+  min-height: 2.875rem;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  border-radius: 0.25rem;
+  padding: 0.75rem 1rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  transition: color 180ms ease, background-color 180ms ease, border-color 180ms ease;
+}
+
+.button-primary {
+  background: #83e2bd;
+  color: #090d0c;
+}
+
+.button-primary:hover {
+  background: #a0edcf;
+}
+
+.button-secondary {
+  border: 1px solid rgb(255 255 255 / 16%);
+  color: #e2e8f0;
+}
+
+.button-secondary:hover {
+  border-color: #83e2bd;
+  color: #83e2bd;
+}
+
+.animate-rise {
+  animation: rise-in 650ms ease-out both;
+}
+
+@keyframes rise-in {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes ambient-drift {
+  from { transform: translate3d(-2%, -1%, 0) scale(0.96); }
+  to { transform: translate3d(3%, 2%, 0) scale(1.05); }
+}
+
+@media (max-width: 640px) {
+  .site-width { width: min(100% - 2rem, 72rem); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    will-change: auto !important;
+  }
+}
