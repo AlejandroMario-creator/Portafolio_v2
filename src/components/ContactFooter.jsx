@@ -4,13 +4,13 @@ export default function ContactFooter() {
   return (
     <>
       <section id="contacto" className="section-rule scroll-mt-24">
-        <div className="site-width grid gap-8 py-20 md:grid-cols-[0.72fr_1.28fr] md:py-28">
-          <div>
-            <p className="eyebrow">04 <span>/</span> Contacto</p>
-            <h2 className="section-title mt-3">Conversemos.</h2>
-          </div>
-          <div className="flex flex-col items-start justify-between gap-8 sm:flex-row sm:items-end">
-            <p className="max-w-sm text-base leading-7 text-slate-400">¿Tienes un proyecto o una oportunidad en mente? Escríbeme y hablemos.</p>
+        <div className="site-width py-20 md:py-28">
+          <div className="contact-panel grid gap-8 p-7 sm:p-10 md:grid-cols-[1fr_auto] md:items-end md:p-14">
+            <div>
+              <p className="eyebrow">04 <span>/</span> Contacto</p>
+              <h2 className="section-title mt-3">¿Tienes una idea en mente?</h2>
+              <p className="max-w-sm text-base leading-7 text-slate-400">¿Tienes un proyecto o una oportunidad en mente? Escríbeme y hablemos.</p>
+            </div>
             <a className="button-primary shrink-0" href={`mailto:${profile.email}`}>Enviar un correo <span aria-hidden="true">↗</span></a>
           </div>
         </div>

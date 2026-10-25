@@ -14,8 +14,12 @@ export default function Navbar() {
   return (
     <header className="sticky top-0 z-50 border-b border-white/[0.07] bg-ink/85 backdrop-blur-xl">
       <nav className="site-width flex h-[72px] items-center justify-between" aria-label="Navegación principal">
-        <a className="font-display text-lg font-semibold text-white" href="#inicio" aria-label={`${profile.name}, inicio`}>
-          {profile.initials}<span className="text-mint">.</span>
+        <a className="flex items-center gap-3" href="#inicio" aria-label={`${profile.name}, inicio`}>
+          <span className="brand-mark">{profile.initials}<span>/</span></span>
+          <span className="flex flex-col">
+            <span className="font-display text-sm font-semibold text-white">{profile.name}</span>
+            <span className="font-mono text-[9px] uppercase tracking-[0.12em] text-slate-500">Ingeniería de sistemas</span>
+          </span>
         </a>
         <button
           type="button"
@@ -41,6 +45,9 @@ export default function Navbar() {
             </a>
           ))}
         </div>
+        <a className="nav-contact" href={`mailto:${profile.email}`}>
+          Hablemos <span aria-hidden="true">↗</span>
+        </a>
       </nav>
     </header>
   );

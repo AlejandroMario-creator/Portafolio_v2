@@ -6,29 +6,29 @@ export default function Projects() {
       <div className="site-width py-20 md:py-28">
         <div className="mb-12 flex flex-wrap items-end justify-between gap-4">
           <div>
-            <p className="eyebrow">03 <span>/</span> Trabajo seleccionado</p>
-            <h2 className="section-title mt-3">Proyectos</h2>
+            <p className="eyebrow">03 <span>/</span> Arquitectura del proyecto</p>
+            <h2 className="section-title mt-3">Proyectos destacados.</h2>
           </div>
-          <p className="max-w-xs text-sm leading-6 text-slate-500">Proyectos de ejemplo. Sustituye contenido y enlaces por tu trabajo real.</p>
+          <p className="max-w-xs text-sm leading-6 text-slate-500">{projects[0].context}</p>
         </div>
-        <div className="grid gap-5 lg:grid-cols-2">
+        <div className="grid gap-5">
           {projects.map((project) => (
             <article key={project.number} className="project-card group flex flex-col border border-white/10 bg-white/[0.02] transition duration-300 hover:-translate-y-1 hover:border-mint/30 hover:bg-white/[0.035] sm:flex-row">
-              <div className="project-art" aria-hidden="true">
-                <div className="project-window">
-                  <div className="project-window-bar"><span /><span /><span /></div>
-                  <div className="project-window-content">
-                    <div className="project-window-side"><i /><i /><i /><i /></div>
-                    <div className="project-window-main">
-                      <div className="project-window-heading" />
-                      <div className="project-window-metrics"><i /><i /><i /></div>
-                      <div className="project-window-chart"><i /><i /><i /><i /><i /><i /><i /><i /></div>
-                    </div>
+              <div className="project-art" role="img" aria-label={`Arquitectura de ${project.title}: ${project.architecture.join(", ")}`}>
+                <div className="project-architecture">
+                  <p className="project-architecture-caption">MAPA DEL SISTEMA <span>/{project.number}</span></p>
+                  <div className="project-architecture-flow">
+                    {project.architecture.map((layer, index) => (
+                      <div className="project-architecture-step" key={layer}>
+                        <span className="project-architecture-number">0{index + 1}</span>
+                        <span className="project-architecture-node">{layer}</span>
+                        {index < project.architecture.length - 1 && <span className="project-architecture-connector" aria-hidden="true">↓</span>}
+                      </div>
+                    ))}
                   </div>
                 </div>
-                <span className="project-art-label">SISTEMA <span>/{project.number}</span></span>
               </div>
-              <div className="flex flex-1 flex-col p-6 sm:p-7">
+              <div className="project-details flex flex-1 flex-col p-6 sm:p-7 lg:p-10">
                 <div className="flex items-start justify-between">
                   <span className="font-mono text-xs text-mint">{project.number} <span className="text-slate-600">/ PROYECTO</span></span>
                   <span className="text-slate-600 transition group-hover:text-mint" aria-hidden="true">↗</span>
