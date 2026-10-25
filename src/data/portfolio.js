@@ -11,8 +11,7 @@ export const profile = {
   ],
   focus: ["Interfaz", "Lógica", "Datos"],
   email: "mario715ach@gmail.com",
-  github: "https://github.com/tuusuario",
-  linkedin: "https://linkedin.com/in/tuusuario",
+  github: "https://github.com/AlejandroMario-creator",
 };
 
 export const skillGroups = [
@@ -25,12 +24,12 @@ export const skillGroups = [
 export const projects = [
   {
     number: "01",
-    title: "Plataforma de gestión",
-    description: "Aplicación modular para administrar usuarios y procesos mediante una API REST con responsabilidades bien definidas.",
-    context: "Caso de ejemplo: una API REST que conecta la interfaz con el servidor y los datos.",
-    technologies: ["React", "Node.js", "PostgreSQL"],
-    architecture: ["React", "API REST", "Node.js", "PostgreSQL"],
-    github: "https://github.com/tuusuario",
-    demo: "https://example.com",
+    title: "ON Negocios — Landing page",
+    description: "Landing page para presentar los planes y beneficios de ON Negocios, con navegación a sus secciones principales.",
+    context: "Landing page para comunicar una propuesta de negocio de forma clara y visual.",
+    technologies: [],
+    architecture: ["Presentación", "Planes", "Beneficios", "Contacto"],
+    preview: "https://on-landing-page.vercel.app/",
+    demo: "https://on-landing-page.vercel.app/",
   }
 ];

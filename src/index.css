@@ -1531,6 +1531,24 @@ header nav { min-height: 76px; }
   letter-spacing: 0.15em;
 }
 
+.project-art-preview::after { content: none; }
+
+.project-preview {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
+
+.project-preview iframe {
+  display: block;
+  width: 300%;
+  height: 300%;
+  border: 0;
+  pointer-events: none;
+  transform: scale(0.333333);
+  transform-origin: top left;
+}
+
 .project-architecture {
   width: min(76%, 25rem);
   border-color: rgb(242 160 107 / 30%);
